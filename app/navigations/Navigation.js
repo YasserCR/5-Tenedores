@@ -10,7 +10,7 @@ import Account from "../screens/Account";
 
 const Tab = createBottomTabNavigator();
 
-export default function Navegation() {
+export default function Navigation() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
