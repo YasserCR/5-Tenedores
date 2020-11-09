@@ -29,7 +29,7 @@ export default function Navigation() {
           component={TopRestaurants}
           options={{ title: "Top 5" }}
         />
-        <Tab-Screen
+        <Tab.Screen
           name="search"
           component={Search}
           options={{ title: "Buscar" }}
