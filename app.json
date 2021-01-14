@@ -20,6 +20,12 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.yasserrosas.cinten",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBJ12RARXpxYwCxaiwkLOG3A4BDhrynSu4"
+        }
+      },
       "permissions": ["CAMERA_ROLL","READ_EXTERNAL_STORAGE","WRITE_EXTERNAL_STORAGE","LOCATION","ACCESS_COARSE_LOCATION","ACCESS_FINE_LOCATION"]
     },
     "web": {
