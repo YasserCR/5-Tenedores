@@ -47,6 +47,7 @@ export default function Favorites(props) {
               const restaurants = [];
               response.forEach((doc) => {
                 const restaurant = doc.data();
+                restaurant.id = doc.id;
                 restaurants.push(restaurant);
               });
               setRestaurants(restaurants);
@@ -85,6 +86,7 @@ export default function Favorites(props) {
               setIsLoading={setIsLoading}
               toastRef={toastRef}
               setReloadData={setReloadData}
+              navigation={navigation}
             />
           )}
           keyExtractor={(item, index) => index.toString()}
@@ -132,7 +134,13 @@ function UserNoLogged(props) {
 }
 
 function Restaurant(props) {
-  const { restaurant, setIsLoading, toastRef, setReloadData } = props;
+  const {
+    restaurant,
+    setIsLoading,
+    toastRef,
+    setReloadData,
+    navigation,
+  } = props;
   const { id, name, images } = restaurant.item;
 
   const confirmRemoveFavorite = () => {
@@ -182,7 +190,14 @@ function Restaurant(props) {
 
   return (
     <View style={styles.restaurant}>
-      <TouchableOpacity onPress={() => console.log("Ir")}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("restaurants", {
+            screen: "restaurant",
+            params: { id, name },
+          })
+        }
+      >
         <Image
           resizeMode="cover"
           style={styles.image}
